@@ -1,10 +1,11 @@
-import NextAuth from 'next-auth';
+import { NextApiResponse } from 'next';
+import NextAuth, { NextAuthOptions, NextAuthRequest } from 'next-auth';
 
-const tenantName = process.env.AUTH_TENANT_NAME
+const tenantName = process.env.AUTH_TENANT_NAME;
 //const tenantGuid = process.env.AUTH_TENANT_GUID
-const userFlow = process.env.USER_FLOW
+const userFlow = process.env.USER_FLOW;
 
-const options = {
+const options: NextAuthOptions = {
   session: {
     jwt: true,
   },
@@ -37,7 +38,9 @@ const options = {
           email: profile.emails.length ? profile.emails[0] : null,
         }
       },
+      // @ts-ignore
       clientId: process.env.AUTH_CLIENT_ID,
+      // @ts-ignore
       clientSecret: process.env.AUTH_CLIENT_SECRET,
       idToken: true,
       state: false,
@@ -45,4 +48,4 @@ const options = {
   ],
 }
 
-export default (req, res) => NextAuth(req, res, options)
+export default (req: NextAuthRequest, res: NextApiResponse<any>) => NextAuth(req, res, options);

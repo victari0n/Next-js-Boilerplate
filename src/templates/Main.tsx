@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
 import { Config } from '../utils/Config';
-import { useSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client';
 
 type IMainProps = {
   meta: ReactNode;
@@ -9,7 +9,7 @@ type IMainProps = {
 };
 
 export default function Main (props: IMainProps) {
-  const [session, loading] = useSession();
+  const [session] = useSession();
 
   return (
     <div className="antialiased w-full text-gray-700">
@@ -48,7 +48,7 @@ export default function Main (props: IMainProps) {
                 </>
                 : 
                 <div>
-                  You are not signed in! <a style={{color: 'blue'}} href="/api/auth/signin">You must sign in to access documentation!</a>
+                  <a style={{color: 'blue'}} href="/api/auth/signin">Sign in here!</a>
                 </div>
               }
               </li>

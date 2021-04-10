@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { session } = pageProps
   
   return (
-    <AuthProvider options={{ site: process.env.NEXTAUTH_URL }} session={session}>
+    <AuthProvider session={session}>
       <Component {...pageProps} />)
     </AuthProvider>
   )
