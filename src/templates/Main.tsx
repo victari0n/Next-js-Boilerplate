@@ -34,9 +34,17 @@ const Main = (props: IMainProps) => (
             <li className="mr-6">
               <a
                 className="text-gray-700 border-none hover:text-gray-900"
-                href="https://github.com/ixartz/Next-js-Boilerplate"
+                href="https://github.com/victari0n/Next-js-Boilerplate"
               >
                 GitHub
+              </a>
+            </li>
+            <li className="mr-6">
+              <a
+                className="text-gray-700 border-none hover:text-gray-900"
+                href="https://github.com/victari0n/Next-js-Boilerplate"
+              >
+                Authentication
               </a>
             </li>
           </ul>
@@ -59,7 +67,7 @@ const Main = (props: IMainProps) => (
         {' '}
         by
         {' '}
-        <a href="https://creativedesignsguru.com">CreativeDesignsGuru</a>
+        <a href="https://giddygig.com">GiddyGig</a>
         {/*
          * PLEASE READ THIS SECTION
          * We'll really appreciate if you could have a link to our website
